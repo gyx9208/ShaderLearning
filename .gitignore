@@ -1,0 +1,52 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
+Build/
+AutoBuild/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+.vs/
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+#Icon?
+ehthumbs.db
+Thumbs.db
+AssetBundles/
+Resources_bak/
+Packages/
+Assets/Editor/Configs/Packages/ResourcePackage/Full/
+Assets/Editor/Configs/Packages/ResourcePackage/Minor/
+
+# ============ #
+# Misc         #
+# ============ #
+Tools/Obfuscation/src/**/*.dll
+Tools/Obfuscation/src/*/*.log
+Tools/Obfuscation/src/*/*.apk
+Assets/UnityVS/
+Assets/UnityVS.meta
+Assets/Textures
+ProjectSettings/ProjectVersion.txt
