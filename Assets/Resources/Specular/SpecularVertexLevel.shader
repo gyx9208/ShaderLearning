@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/Specular/VertexLevel"{
     Properties{
         _Diffuse ("Diffuse", Color) = (1,1,1,1)
@@ -28,7 +30,7 @@ Shader "Custom/Specular/VertexLevel"{
 
                 v2f vert(a2v v){
                     v2f o;
-                    o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                    o.pos = UnityObjectToClipPos(v.vertex);
 
                     fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
                     fixed3 worldNormal = normalize(mul(v.normal, (float3x3)unity_WorldToObject));

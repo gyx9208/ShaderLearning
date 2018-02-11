@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/Specular/BlinnPhong"{
     Properties{
         _Diffuse ("Diffuse", Color) = (1,1,1,1)
@@ -29,7 +31,7 @@ Shader "Custom/Specular/BlinnPhong"{
 
                 v2f vert(a2v v){
                     v2f o;
-                    o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                    o.pos = UnityObjectToClipPos(v.vertex);
                     //UnityObjectToWorldNormal(v.normal) = mul(v.normal, (float3x3)unity_WorldToObject);
                     o.worldNormal = UnityObjectToWorldNormal(v.normal);
                     o.worldPos = mul(unity_ObjectToWorld,v.vertex).xyz;

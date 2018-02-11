@@ -1,4 +1,6 @@
-﻿Shader "Custom/Diffuse/HalfLambert" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/Diffuse/HalfLambert" {
 	Properties{
 		_Diffuse("Diffuse", Color) = (1,1,1,1)
 	}
@@ -24,7 +26,7 @@
 				v2f vert(a2v v){
 					v2f o;
 					//注释见DiffuseVertexLevel shader
-					o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos(v.vertex);
 					//这里没有再归一化了，反正之后还要归一一次？
 					o.worldNormal = mul(v.normal, (float3x3)unity_WorldToObject);
 

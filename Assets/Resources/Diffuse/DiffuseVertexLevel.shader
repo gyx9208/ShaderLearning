@@ -1,4 +1,6 @@
-﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 // 抄完一遍，发现光照是反的…………
 // 灵异事件，重启Unity就好了
 // 发现原因了。LightMode打成LightModel了。LightMode定义了_WorldSpaceLightPos0的值是什么
@@ -28,7 +30,7 @@ Shader "Custom/Diffuse/VertexLevel" {
 				v2f vert(a2v v){
 					v2f o;
 					//计算下SV_POSITION，都要算的，没啥屌用
-					o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos(v.vertex);
 					//环境光
 					fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
 					//将法线从模型空间变换到世界空间，使用顶点变换矩阵的逆转置矩阵变换法线

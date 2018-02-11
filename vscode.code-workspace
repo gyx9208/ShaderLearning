@@ -4,5 +4,21 @@
 			"path": "Assets"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/*.meta" : true,
+			"Textures" : true,
+			"Scene" : true,
+			"**/*.mat":true,
+			"**/*.JPG":true,
+			"Models":true,
+			"**/*.psd":true,
+			"**/*.tga":true
+		}
+	}
 }
